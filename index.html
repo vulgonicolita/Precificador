@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="estilo.css">
+  <script src="calculo.js"></script>
+  <title>Precificador</title>
+</head>
+
+<body class="font-sans grid flex justify-items-start bg-indigo-100">
+
+
+  <h1 class="text-black text-4xl mt-10 mb-6 font-semibold ">Precificador</h1>
+
+ 
+                <div class="border-l border-indigo-900">
+                  <div>
+                    <label class="block ml-3 text-medium font-medium text-black">Custo</label>
+                      <div class=" pr-3  pb-3"> 
+                        <div class="relative mt-1 ml-3 rounded-md drop-shadow">
+                          <input id="custo" class="block w-auto rounded-md border-gray-300 pl-2 py-2 pr-12 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="R$ 0.00"> 
+                        </div>
+                      </div> 
+                  <div>
+                    
+                    <div class="mt-2">
+                      <label class="block ml-3 text-medium font-medium text-black">Taxa</label>
+                        <div class=" pr-3  pb-3"> 
+                          <div class="relative mt-1 ml-3 rounded-md drop-shadow">
+                            <input id="taxa" class="block w-auto rounded-md border-gray-300 pl-2 py-2 pr-12 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="0.00 %">
+                          </div>
+                        </div>
+                    </div>
+
+                  <div class="mt-2 inline-block ">
+                      <label class="block ml-3 text-medium font-medium text-black">Reajuste</label>
+                        <div class=" pr-3  pb-3"> 
+                          <div class="relative mt-1 ml-3 rounded-md drop-shadow">
+                            <input id="reajuste" class="block w-auto rounded-md border-gray-300 pl-2 py-2 pr-12 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="0.00 %">
+                          </div>
+                        </div>
+                  </div>
+
+                  <div>
+                    <div class="mt-2 inline-block ">
+                      <label class="block ml-3 text-medium font-medium text-black">Impostos</label>
+                        <div class="  pr-3  pb-3"> 
+                          <div class="relative mt-1 ml-3 rounded-md drop-shadow">
+                            <input id="imposto" class="block w-auto rounded-md border-gray-300 pl-2 py-2 pr-12 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="0.00 %">
+                          </div>
+                        </div>
+                    </div>
+
+                  <div>
+                    <div class="mt-2 inline-block ">
+                      <label class="block ml-3 text-medium font-medium text-black">Embalagem</label>
+                      <div class="  pr-3  pb-3"> 
+                        <div class="relative mt-1 ml-3 rounded-md drop-shadow">
+                          <input id="embalagem" class="block w-auto rounded-md border-gray-300 pl-2 py-2 pr-12 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="R$ 0.00">
+                        </div>
+                      </div>
+                  </div>
+
+                  <div>
+                    <div class="mt-2 inline-block ">
+                      <label class="block ml-3 text-medium font-medium text-black">Margem</label>
+                        <div class="  pr-3  pb-3"> 
+                          <div class="relative mt-1 ml-3 rounded-md drop-shadow">
+                            <input id="margem" class="block w-auto rounded-md border-gray-300 pl-2 py-2 pr-12 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="0.00 %">
+                          </div>
+                        </div>
+                  </div>
+
+                  <div class="mt-2">
+                      <label class="block ml-3 text-medium font-medium text-black">Frete</label>
+                        <div class="  pr-3  pb-3"> 
+                            <div class="relative mt-1 ml-3 rounded-md drop-shadow">
+                                <select id="frete" class="block w-auto max-w-lg px-1 py-2 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:max-w-xs sm:text-sm bg-white">
+                                  <option>0.00</option>
+                                  <option>5.00</option>
+                                  <option>17.45</option>
+                                  <option>18.95</option>
+                                  <option>19.45</option>
+                                  <option>23.95</option>
+                                  <option>26.17</option>
+                                  <option>28.42</option>
+                                  <option>29.17</option>
+                                  <option>34.9</option>
+                                  <option>35.92</option>
+                                  <option>35.95</option>
+                                  <option>37.9</option>
+                                  <option>38.9</option>
+                                  <option>47.9</option>
+                                  <option>53.92</option>
+                                  <option>56.45</option>
+                                  <option>62.95</option>
+                                  <option>73.45</option>
+                                  <option>84.67</option>
+                                  <option>84.95</option>
+                                  <option>94.42</option>
+                                  <option>96.45</option>
+                                  <option>102.95</option>
+                                  <option>110.17</option>
+                                  <option>110.45</option>
+                                  <option>118.95</option>
+                                  <option>146.9</option>
+                                </select>
+                        </div>  
+                            </div>
+                  </div>
+                </div>
+          <div class="mt-4 grid justify-items-center mb-10">
+            <div>
+                <button onclick="limpar()" type="butom" class=" rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-700 shadow-sm hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Limpar</button>
+                <button onclick="calcular();" class="ml-3 inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Calcular</button>
+            </div>
+          </div>
+
+          <h1>TOTAL: <span id="teste"></span></h1>
+
+</body>
+</html>
